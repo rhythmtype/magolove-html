@@ -9,8 +9,11 @@
 <meta name="copyright" content="" />
 <meta name="author" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+
 <link href="../shared/css/shared.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/shared/js/libs/jquery-1.7.2.min.js"><\/script>')</script>
 <script>
 window.onload = function(){
 	setTimeout(function(){window.scrollTo(0,1);},100);
@@ -51,6 +54,22 @@ $().ready(function() {
 //			return false;
 //		}
 //	);
+	$('.hnotify a').click(
+		function() {
+			var winHeight = window.innerHeight ? window.innerHeight : $(window).height();
+			var menuHeight = $('#header-notify').innerHeight();
+			var menuShowHeight = (menuHeight > winHeight) ? menuHeight : winHeight;
+			console.log(menuHeight);
+			$('#header-notify').css('height',menuShowHeight);
+			
+			$('html, body').animate({scrollTop:0}, 600);
+			$('#header-notify').slideToggle();
+			$('#contents, #footer').fadeToggle();
+			current.toggleClass('cur');
+			$('#header #main-menu .hnotify').toggleClass('cur');
+			return false;
+		}
+	);
 });
 </script>
 <style type="text/css">
@@ -66,7 +85,8 @@ $().ready(function() {
 <nav id="main-menu">
 <ul>
 <li class="hmenu"><a href="#header-menu"><img src="../shared/images/btn_menu.png" alt="メニュー" width="60" /></a></li>
-<li class=""><a href="#"><img src="../shared/images/btn_camera.png" alt="写真投稿" width="60" /></a></li>
+<li class="hcamera"><a href="#"><img src="../shared/images/btn_camera.png" alt="写真投稿" width="60" /></a></li>
+<li class="hnotify"><a href="#"><dl><dt><img src="../shared/images/btn_notify.png" alt="お知らせ" width="59" /></dt><dd>5</dd></dl></a></li>
 </ul>
 </nav>
 </div>
@@ -107,6 +127,37 @@ $().ready(function() {
 </div>
 </div>
 <!-- /#header-menu -->
+
+<div id="header-notify">
+<div class="wrap">
+<p class="ttl-notify">お知らせ</p>
+<div class="block">
+<p class="icn"><img src="../shared/photo/dummy_icon_06.jpg" width="40" alt="" /></p>
+<p><a href="#">もえちゃんママ</a>さんと<a href="#">神田川俊郎</a>さんがあなたの写真にスタンプをおしました。</p>
+</div>
+<div class="block">
+<p class="icn"><img src="../shared/images/icn_notify_official.png" width="40" alt="" /></p>
+<p><a href="#">ムービー</a>がつくれるようになりました！</p>
+</div>
+<div class="block">
+<p class="icn"><img src="../shared/images/icn_notify_calendar.png" width="40" alt="" /></p>
+<p>きょうは<a href="#">こどもの日</a>です。</p>
+</div>
+<div class="block">
+<p class="icn"><img src="../shared/photo/dummy_icon_06.jpg" width="40" alt="" /></p>
+<p><a href="#">もえちゃんママ</a>さんと<a href="#">神田川俊郎</a>さんがあなたの写真にスタンプをおしました。</p>
+</div>
+<div class="block">
+<p class="icn"><img src="../shared/images/icn_notify_official.png" width="40" alt="" /></p>
+<p><a href="#">ムービー</a>がつくれるようになりました！</p>
+</div>
+<div class="block">
+<p class="icn"><img src="../shared/images/icn_notify_calendar.png" width="40" alt="" /></p>
+<p>きょうは<a href="#">こどもの日</a>です。</p>
+</div>
+</div>
+</div>
+<!-- /#header-notify -->
 </header>
 
 <div id="contents">
@@ -123,7 +174,10 @@ $().ready(function() {
 <article class="feed-item">
 <div class="pht-info">
 <div class="wrap-pht-info">
+<div class="wrap-pht">
 <p class="pht"><a href="#"><img src="../shared/photo/dummy_01.jpg" alt="" /></a></p>
+<div class="comment"><p>友達の〇〇ちゃんが遊びにきてくれました！息子も遊んでもらって喜んでるみたいですー！</p></div>
+</div>
 <div class="block-emo">
 <ul>
 <li class="emo-01"><a href="#">エモーション1</a></li>
@@ -134,21 +188,20 @@ $().ready(function() {
 </ul>
 </div><!--/.block-emo-->
 <div class="emo-count">
-<dl class="emo-05">
-<dt>エモーション5</dt>
-<dd>15</dd>
-</dl>
+<p><span class="num">15</span>view</p>
 </div><!--/.emo-count-->
-<div class="comment"><p>友達の〇〇ちゃんが遊びにきてくれました！息子も遊んでもらって喜んでるみたいですー！</p></div>
 <div class="block-react">
-<ul class="list-viewer abbr">
+<ul class="list-viewer">
 <li class="emo-01"><a href="#"><img src="../shared/photo/dummy_icon_03.jpg" width="20" alt=""></a></li>
 <li class="emo-02"><a href="#"><img src="../shared/photo/dummy_icon_04.jpg" width="20" alt=""></a></li>
 <li class="emo-03"><a href="#"><img src="../shared/photo/dummy_icon_05.jpg" width="20" alt=""></a></li>
 <li class="emo-04"><a href="#"><img src="../shared/photo/dummy_icon_06.jpg" width="20" alt=""></a></li>
+<li><a href="#"><img src="../shared/photo/dummy_icon_01.jpg" width="20" alt=""></a></li>
 <li><a href="#"><img src="../shared/photo/dummy_icon_02.jpg" width="20" alt=""></a></li>
+<li><a href="#"><img src="../shared/photo/dummy_icon_03.jpg" width="20" alt=""></a></li>
 </ul>
-<p class="btn-share"><a href="#"><img src="../shared/images/btn_share.png" width="27" alt="共有する" /></a></p>
+<p class="btn-more-react"><img src="../shared/images/btn_more_react.png" width="52" alt="もっと見る" /></p>
+<p class="btn-share btn-type-txt-02"><a href="#">共有する</a></p>
 </div><!--/.block-react-->
 </div>
 </div><!--/.pht-info-->
@@ -165,7 +218,10 @@ $().ready(function() {
 <article class="feed-item">
 <div class="pht-info">
 <div class="wrap-pht-info">
+<div class="wrap-pht">
 <p class="pht"><a href="#"><img src="../shared/photo/dummy_02.jpg" width="245" alt="" /></a></p>
+<div class="comment"><p>娘夫婦と家族でドライブに行ってきました。お天気がよくて気持ちよかったですよ。</p></div>
+</div>
 <div class="block-emo">
 <ul>
 <li class="emo-01"><a href="#">エモーション1</a></li>
@@ -176,15 +232,51 @@ $().ready(function() {
 </ul>
 </div><!--/.block-emo-->
 <div class="emo-count">
-<dl class="emo-01">
-<dt>エモーション1</dt>
-<dd>40</dd>
-</dl>
+<p><span class="num">40</span>view</p>
+</div><!--/.emo-count-->
+<div class="block-react">
+<ul class="list-viewer">
+<li class="emo-01"><a href="#"><img src="../shared/photo/dummy_icon_03.jpg" width="20" alt=""></a></li>
+<li class="emo-02"><a href="#"><img src="../shared/photo/dummy_icon_04.jpg" width="20" alt=""></a></li>
+<li class="emo-03"><a href="#"><img src="../shared/photo/dummy_icon_05.jpg" width="20" alt=""></a></li>
+<li class="emo-04"><a href="#"><img src="../shared/photo/dummy_icon_06.jpg" width="20" alt=""></a></li>
+</ul>
+<p class="btn-share btn-type-txt-02"><a href="#">共有する</a></p>
+</div><!--/.block-react-->
+</div>
+</div><!--/.pht-info-->
+<div class="post-info">
+<p class="post-user"><img src="../shared/photo/dummy_icon_02.jpg" width="30" alt="" /></p>
+<div class="post-date">
+<p class="date-y">2012</p>
+<p class="date-m">04.24</p>
+<p class="date-t">08:32</p>
+</div>
+</div><!--/.post-info-->
+</article><!--/[feed-item]-->
+
+<article class="feed-item">
+<div class="pht-info">
+<div class="wrap-pht-info">
+<div class="wrap-pht">
+<p class="pht"><a href="#"><img src="../shared/photo/dummy_02.jpg" width="245" alt="" /></a></p>
+</div>
+<div class="block-emo">
+<ul>
+<li class="emo-01"><a href="#">エモーション1</a></li>
+<li class="emo-02"><a href="#">エモーション2</a></li>
+<li class="emo-03"><a href="#">エモーション3</a></li>
+<li class="emo-04"><a href="#">エモーション4</a></li>
+<li class="emo-05"><a href="#">エモーション5</a></li>
+</ul>
+</div><!--/.block-emo-->
+<div class="emo-count">
+<p><span class="num">40</span>view</p>
 </div><!--/.emo-count-->
 <div class="block-react">
 <ul class="list-viewer">
 </ul>
-<p class="btn-share"><a href="#"><img src="../shared/images/btn_share.png" width="27" alt="共有する" /></a></p>
+<p class="btn-share btn-type-txt-02"><a href="#">共有する</a></p>
 </div><!--/.block-react-->
 </div>
 </div><!--/.pht-info-->

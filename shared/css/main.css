@@ -2,7 +2,7 @@
 /*
 *
 *	Title: magolove - main
-*	Last Modified: 2012-05-30
+*	Last Modified: 2012-05-31
 *	Description: WebApp Page Style
 *
 */
@@ -90,8 +90,38 @@ a:active {
 	-ms-background-size: cover;
 	background-size: cover;
 }
+#main-menu .hnotify a {
+	display: block;
+}
+#main-menu .hnotify a dd {
+	display: none;
+}
 #main-menu .hmenu.cur img {
 	visibility: hidden;
+}
+#main-menu .hnotify.cur img {
+	display: none;
+}
+#main-menu .hnotify.cur a {
+	width: 59px;
+	height: 44px;
+	background: #5c5c54;
+	color: #fff;
+	text-decoration: none;
+	text-align: center;
+	font-weight: bold;
+}
+#main-menu .hnotify.cur dd {
+	display: inline-block;
+	width: 32px;
+	background: #3b3b34;
+	margin: 11px 0 0;
+	padding: 3px 0;
+	-moz-border-radius: 1.4em;
+	-webkit-border-radius: 1.4em;
+	-o-border-radius: 1.4em;
+	-ms-border-radius: 1.4em; 
+	border-radius: 1.4em;
 }
 .close-btn {
 }
@@ -272,6 +302,58 @@ a:active {
 #header-menu .list-setting li:nth-child(odd) {
 	border-right: 1px solid #999;
 }
+
+
+#header-notify {
+	display: none;
+	width: 100%;
+	min-width: 320px;
+	margin: 0 0 -44px;
+	position: absolute;
+	top: 0;
+	z-index: 50;
+	pointer-events: none;
+}
+#header-notify .wrap {
+	width: 100%;
+	height: 100%;
+	background: #5c5c54;
+	padding: 54px 15px 20px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+	pointer-events: auto;
+}
+#header-notify .ttl-notify {
+	margin: 0 0 5px;
+	font-size: 136%;
+	font-weight: bold;
+	color: #fff;
+}
+#header-notify .block {
+	display: table;
+	width: 100%;
+	padding: 5px 0;
+	border-top: 1px solid #3b3b34;
+}
+#header-notify .block:last-child {
+	border-bottom: 1px solid #3b3b34;
+}
+#header-notify .block p {
+	display: table-cell;
+	vertical-align: middle;
+	color: #fff;
+}
+#header-notify p a {
+	color: #ffbe40;
+	font-weight: bold;
+}
+#header-notify .icn {
+	width: 48px;
+}
+
 
 #footer {
 	padding: 15px 0;
@@ -534,108 +616,137 @@ label {
 	-ms-background-clip:padding-box; 
 	position: relative;
 }
+.feed-item .pht-info .wrap-pht {
+	position: relative;
+}
 .feed-item .pht-info .pht img {
 	width: 100%;
 	min-width: 245px;
 	-webkit-border-radius: 7px 7px 0px 0px;
 	border-radius: 7px 7px 0px 0px;
 }
+
+.feed-item .comment {
+	background: rgba(0,0,0,0.4);
+	padding: 8px 12px;
+	/*border-top: 2px solid #f2f2f2;*/
+	color: #fff;
+	font-size: 85%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
 .feed-item .pht-info .block-emo {
-	padding: 6px 0;
+	/*padding: 6px 0;*/
 }
 .feed-item .pht-info .block-emo ul {
 	overflow: hidden;
 	width: 100%;
 	display: table;
+	border-bottom: 2px solid #e5e5e3;
 }
 .feed-item .pht-info .block-emo li {
 	display: table-cell;
 	table-layout: fixed;
-	height: 22px;
-	margin-right: 28px;
+	height: 35px;
+	/*margin-right: 28px;*/
+	border-right: 1px solid #e5e5e3;
 	text-indent: -9999px;
 	overflow: hidden;
 }
 .feed-item .pht-info .block-emo li:last-child {
-	margin: 0;
+	border: none;
 }
 .feed-item .pht-info .block-emo li a {
 	display: block;
-	width: 22px;
-	height: 22px;
+	width: 100%;
+	height: 35px;
 	margin: 0 auto;
 }
 .feed-item .pht-info .block-emo .emo-01 a {
-	background: url(../images/icn_emo_01.png) scroll no-repeat 0 0;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	-ms-background-size: cover;
-	background-size: cover;
+	background: url(../images/icn_emo.png) scroll no-repeat center 0;
+	-webkit-background-size: 24px 175px;
+	-moz-background-size: 24px 175px;
+	-o-background-size: 24px 175px;
+	-ms-background-size: 24px 175px;
+	background-size: 24px 175px;
 }
 .feed-item .pht-info .block-emo .emo-02 a {
-	background: url(../images/icn_emo_02.png) scroll no-repeat 0 0;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	-ms-background-size: cover;
-	background-size: cover;
+	background: url(../images/icn_emo.png) scroll no-repeat center -35px;
+	-webkit-background-size: 24px 175px;
+	-moz-background-size: 24px 175px;
+	-o-background-size: 24px 175px;
+	-ms-background-size: 24px 175px;
+	background-size: 24px 175px;
 }
 .feed-item .pht-info .block-emo .emo-03 a {
-	background: url(../images/icn_emo_03.png) scroll no-repeat 0 0;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	-ms-background-size: cover;
-	background-size: cover;
+	background: url(../images/icn_emo.png) scroll no-repeat center -70px;
+	-webkit-background-size: 24px 175px;
+	-moz-background-size: 24px 175px;
+	-o-background-size: 24px 175px;
+	-ms-background-size: 24px 175px;
+	background-size: 24px 175px;
 }
 .feed-item .pht-info .block-emo .emo-04 a {
-	background: url(../images/icn_emo_04.png) scroll no-repeat 0 0;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	-ms-background-size: cover;
-	background-size: cover;
+	background: url(../images/icn_emo.png) scroll no-repeat center -105px;
+	-webkit-background-size: 24px 175px;
+	-moz-background-size: 24px 175px;
+	-o-background-size: 24px 175px;
+	-ms-background-size: 24px 175px;
+	background-size: 24px 175px;
 }
 .feed-item .pht-info .block-emo .emo-05 a {
-	background: url(../images/icn_emo_05.png) scroll no-repeat 0 0;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	-ms-background-size: cover;
-	background-size: cover;
+	background: url(../images/icn_emo.png) scroll no-repeat center -140px;
+	-webkit-background-size: 24px 175px;
+	-moz-background-size: 24px 175px;
+	-o-background-size: 24px 175px;
+	-ms-background-size: 24px 175px;
+	background-size: 24px 175px;
 }
 .feed-item .pht-info .emo-count {
 	position: absolute;
 	top: -4px;
 	right: 5px;
+	z-index: 30;
 }
-.feed-item .pht-info .emo-count dl {
+.feed-item .pht-info .emo-count p {
 	width: 40px;
-	background: #fff;
-	padding: 0 0 4px;
-	-moz-box-shadow: 0 1px 0 rgba(0,0,0,0.4);
-	-webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.4);
-	-o-box-shadow: 0 1px 0 rgba(0,0,0,0.4);
-	-ms-box-shadow: 0 1px 0 rgba(0,0,0,0.4);
-	box-shadow: 0 1px 0 rgba(0,0,0,0.4);
+	background: #ffa2b5;
+	padding: 2px 0 6px;
 	-webkit-border-radius: 0px 0px 20px 20px;
 	border-radius: 0px 0px 20px 20px;
-	overflow: hidden;
-}
-.feed-item .pht-info .emo-count dl dt {
-	width: 18px;
-	height: 19px;
-	margin: 3px auto 0;
-	text-indent: -9999px;
-}
-.feed-item .pht-info .emo-count dl dd {
 	text-align: center;
+	font-size: 77%;
+	color: #fff;
+	text-shadow: 0 -1px 0 #df677b;
+	font-family: Futura, Arial, sans-serif;
+	position: relative;
+	z-index: 1;
+}
+.feed-item .pht-info .emo-count:after {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.1);
+	-webkit-border-radius: 0px 0px 20px 20px;
+	border-radius: 0px 0px 20px 20px;
+	padding: 1px 1px 0;
+	position: absolute;
+	top: 1px;
+	left: -1px;
+	z-index: -1;
+}
+.feed-item .pht-info .emo-count .num {
+	display: block;
+	height: 1.1em;
+	white-space: nowrap;
+	font-size: 200%;
 	font-weight: bold;
-	color: #656565;
 	font-family: Futura, Arial, sans-serif;
 }
-.feed-item .pht-info .emo-count .emo-01 dt {
+/*.feed-item .pht-info .emo-count .emo-01 dt {
 	background: url(../images/icn_emo_01_count.png) scroll no-repeat 0 0;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -681,21 +792,25 @@ label {
 .feed-item .pht-info .emo-count .emo-05 dd {
 	color: #fff;
 	text-shadow: 0 -1px 0 #e3657a;
-}
+}*/
 
-.feed-item .comment {
-	padding: 10px 12px;
-	border-top: 2px solid #f2f2f2;
-}
 
 .feed-item .block-react {
-	min-height: 22px;
 	background: #f1f1ef;
-	padding: 5px 12px 6px;
+	padding: 5px 5px 6px;
 	-webkit-border-radius: 0 0 7px 7px;
 	border-radius: 0 0 7px 7px;
+	overflow: hidden;
 }
 .feed-item .list-viewer {
+	max-width: 224px;
+	background: url(../images/bg_viewer.png) scroll repeat-x 0 0;
+	-webkit-background-size: 32px 22px;
+	-moz-background-size: 32px 22px;
+	-o-background-size: 32px 22px;
+	-ms-background-size: 32px 22px;
+	background-size: 32px 22px;
+	margin: 0 0 0 9px;
 }
 .feed-item .list-viewer:after {
 	content: "";
@@ -704,10 +819,11 @@ label {
 }
 .feed-item .list-viewer li {
 	width: 32px;
+	margin: 0 0 8px;
 	float: left;
 	position: relative;
 }
-.feed-item .list-viewer.abbr li:last-child {
+/*.feed-item .list-viewer.abbr li:last-child {
 	background: url(../images/img_abbr.png) scroll no-repeat right center;
 	-webkit-background-size: 24px 6px;
 	-moz-background-size: 24px 6px;
@@ -715,7 +831,7 @@ label {
 	-ms-background-size: 24px 6px;
 	background-size: 24px 6px;
 	padding-right: 22px;
-}
+}*/
 .feed-item .list-viewer li img {
 	border: 1px solid #dfdfdf;
 }
@@ -733,41 +849,73 @@ label {
 	left: 12px;
 }
 .feed-item .list-viewer li.emo-01:after {
-	background: url(../images/icn_emo_each_01.png) scroll no-repeat 0 0;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	-ms-background-size: cover;
-	background-size: cover;
+	background: url(../images/icn_emo_each.png) scroll no-repeat 0 0;
+	-webkit-background-size: 75px 15px;
+	-moz-background-size: 75px 15px;
+	-o-background-size: 75px 15px;
+	-ms-background-size: 75px 15px;
+	background-size: 75px 15px;
 }
 .feed-item .list-viewer li.emo-02:after {
-	background: url(../images/icn_emo_each_02.png) scroll no-repeat 0 0;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	-ms-background-size: cover;
-	background-size: cover;
+	background: url(../images/icn_emo_each.png) scroll no-repeat -15px 0;
+	-webkit-background-size: 75px 15px;
+	-moz-background-size: 75px 15px;
+	-o-background-size: 75px 15px;
+	-ms-background-size: 75px 15px;
+	background-size: 75px 15px;
 }
 .feed-item .list-viewer li.emo-03:after {
-	background: url(../images/icn_emo_each_03.png) scroll no-repeat 0 0;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	-ms-background-size: cover;
-	background-size: cover;
+	background: url(../images/icn_emo_each.png) scroll no-repeat -30px 0;
+	-webkit-background-size: 75px 15px;
+	-moz-background-size: 75px 15px;
+	-o-background-size: 75px 15px;
+	-ms-background-size: 75px 15px;
+	background-size: 75px 15px;
 }
 .feed-item .list-viewer li.emo-04:after {
-	background: url(../images/icn_emo_each_04.png) scroll no-repeat 0 0;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	-ms-background-size: cover;
-	background-size: cover;
+	background: url(../images/icn_emo_each.png) scroll no-repeat -45px 0;
+	-webkit-background-size: 75px 15px;
+	-moz-background-size: 75px 15px;
+	-o-background-size: 75px 15px;
+	-ms-background-size: 75px 15px;
+	background-size: 75px 15px;
 }
-.feed-item .btn-share {
+.feed-item .list-viewer li.emo-05:after {
+	background: url(../images/icn_emo_each.png) scroll no-repeat -60px 0;
+	-webkit-background-size: 75px 15px;
+	-moz-background-size: 75px 15px;
+	-o-background-size: 75px 15px;
+	-ms-background-size: 75px 15px;
+	background-size: 75px 15px;
+}
+/*.feed-item .btn-share {
 	position: absolute;
 	bottom: 4px;
 	right: 4px;
+}
+*/
+.feed-item .btn-more-react {
+	float: left;
+}
+.feed-item .btn-share {
+	position: relative;
+	float: right;
+	bottom: 0;
+	right: 0;
+}
+.feed-item .btn-share a {
+	display: block;
+	background: #fff url(../images/icn_share.png) scroll no-repeat right center;
+	-webkit-background-size: 20px 12px;
+	-moz-background-size: 20px 12px;
+	-o-background-size: 20px 12px;
+	-ms-background-size: 20px 12px;
+	background-size: 20px 12px;
+	padding: 6px 25px 6px 10px;
+	color: #333;
+	font-size: 85%;
+	font-weight: bold;
+	text-align: center;
 }
 
 .feed-item .post-info {
@@ -1023,7 +1171,6 @@ label {
 }*/
 #album.each-photo .feed-item .block-react {
 	padding: 5px 14px 0 24px;
-	overflow: hidden;
 }
 #album.each-photo .feed-item .list-viewer {
 	margin: 0 0 10px;
@@ -1031,7 +1178,7 @@ label {
 #album.each-photo .feed-item .list-viewer li {
 	margin-bottom: 5px;
 }
-#album.each-photo .feed-item .btn-share {
+/*#album.each-photo .feed-item .btn-share {
 	position: relative;
 	margin: 0 0 12px 0;
 	float: right;
@@ -1052,7 +1199,7 @@ label {
 	font-weight: bold;
 	text-align: center;
 }
-
+*/
 #each-album .each-album-header {
 	background: #fff;
 	margin: -9px 0 12px;
@@ -1156,6 +1303,7 @@ label {
 	border-radius: 8px;
 }
 
+#each-album .block-edit,
 #each-album .block-share {
 	display: none;
 	width: 100%;
@@ -1169,11 +1317,63 @@ label {
 	top: 125px;
 	left: 0;
 }
+#each-album .block-edit .wrap,
 #each-album .block-share .wrap {
 	background: #fff;
 	padding: 25px 0;
 	border: 5px solid #ffa2b5;
 	position: relative;
+}
+#each-album .block-edit .btn-close,
+#each-album .block-share .btn-close {
+	position: absolute;
+	top: -5px;
+	right: -5px;
+}
+#each-album .block-edit .btn-edit-album {
+	margin: 0 21px;
+}
+#each-album .block-edit .btn-edit-album li {
+	margin: 0 0 10px;
+}
+#each-album .block-edit .btn-edit-album li:last-child {
+	margin: 0;
+}
+#each-album .block-edit .btn-edit-album a {
+	background: #fff;
+	padding: 8px 0 8px 44px;
+	font-weight: bold;
+	font-size: 122%;
+	color: #666;
+	position: relative;
+}
+#each-album .block-edit .btn-edit-album a:before {
+	content: "";
+	display: block;
+	width: 25px;
+	height: 25px;
+	background: url(../../album/images/icn_edit_album.png) scroll no-repeat 0 0;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	-ms-background-size: cover;
+	background-size: cover;
+	position: absolute;
+	top: 50%;
+	left: 9px;
+	margin-top: -12px;
+}
+#each-album .block-edit .btn-edit-album .btn-rename a:before {
+	background-position: 0 0;
+}
+#each-album .block-edit .btn-edit-album .btn-add-photo a:before {
+	background-position: 0 -25px;
+}
+#each-album .block-edit .btn-edit-album .btn-del-photo a:before {
+	background-position: 0 -50px;
+}
+#each-album .block-edit .btn-edit-album .btn-del-album a:before {
+	background-position: 0 -75px;
 }
 #each-album .block-share h2 {
 	margin: 0 0 10px;
@@ -1203,11 +1403,6 @@ label {
 }
 #each-album .block-share .wrap-btn li:last-child {
 	margin: 0;
-}
-#each-album .block-share .btn-close {
-	position: absolute;
-	top: -5px;
-	right: -5px;
 }
 
 

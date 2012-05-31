@@ -9,8 +9,11 @@
 <meta name="copyright" content="" />
 <meta name="author" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+
 <link href="../shared/css/shared.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/shared/js/libs/jquery-1.7.2.min.js"><\/script>')</script>
 <script>
 window.onload = function(){
 	setTimeout(function(){window.scrollTo(0,1);},100);
@@ -42,6 +45,13 @@ $().ready(function() {
 	$('.wrap-btn-album .btn-share a, .block-share .btn-close a').click(
 		function() {
 			$('.block-share').fadeToggle();
+			return false;
+		}
+	);
+	$('.wrap-btn-album .btn-edit a, .block-edit .btn-close a').click(
+		function() {
+			$('.block-edit').fadeToggle();
+			return false;
 		}
 	);
 });
@@ -123,7 +133,7 @@ $().ready(function() {
 <p class="create-date">2012.5.10作成</p>
 
 <ul class="wrap-btn-album">
-<li><a href="#"><img src="images/btn_edit_album.png" width="37" alt="編集"></a></li>
+<li class="btn-edit"><a href="#"><img src="images/btn_edit_album.png" width="37" alt="編集"></a></li>
 <li class="btn-share"><a href="#"><img src="images/btn_share_album.png" width="37" alt="共有"></a></li>
 </ul>
 </div>
@@ -144,6 +154,19 @@ $().ready(function() {
 <li><a href="#"><img src="../shared/photo/dummy_thm_01.jpg" width="61" alt="" ></a></li>
 <li><a href="#"><img src="../shared/photo/dummy_thm_02.jpg" width="61" alt="" ></a></li>
 </ol>
+</div>
+
+
+<div class="block-edit">
+<div class="wrap">
+<ul class="btn-edit-album">
+<li class="btn-rename btn-type-txt-l"><a href="#">アルバム名を変更</a></li>
+<li class="btn-add-photo btn-type-txt-l"><a href="#">写真を追加する</a></li>
+<li class="btn-del-photo btn-type-txt-l"><a href="#">写真を削除する</a></li>
+<li class="btn-del-album btn-type-txt-l"><a href="#">アルバムを削除</a></li>
+</ul>
+<p class="btn-close"><a href="#"><img src="images/btn_close.png" width="40" alt=""></a></p>
+</div>
 </div>
 
 <div class="block-share">
