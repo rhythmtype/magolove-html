@@ -1,0 +1,131 @@
+@charset "utf-8";
+
+/*
+*
+*	Title: Rotonda - Base
+*	Last Modified: 2012-03-01
+*	Description: Style Reset
+*
+*/
+
+* {
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", sans-serif;
+	-webkit-text-size-adjust: none;
+}
+html{
+	background:#FFF;
+	color:#000;
+}
+body,div,
+h1, h2, h3, h4, h5, h6,
+p, pre, ul, li, ol, dl, dt, dd, th, td,
+form, fieldset, legend,input, textarea,
+pre, code, address, blockquote {
+	margin: 0;
+	padding: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+	text-align: left;
+	font-size:100%;
+}
+table {
+	margin : 0;
+	empty-cells: show;
+	border-collapse:collapse;
+	border-spacing: 0;
+}
+th, td {
+	text-align: left;
+	vertical-align: top;
+}
+hr.separator,
+.areaAnchor {
+	display : none;
+}
+img {
+	border: none;
+	line-height: 1;
+	vertical-align: top;
+}
+li {
+	list-style: none;
+}
+fieldset, form, label, legend {
+  border: 0;
+  font-size: 100%;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+input, textarea, select {
+	font-family:inherit;
+	font-size:inherit;
+	font-weight:inherit;
+}
+
+/*for new HTML5 elements*/
+article,aside,canvas,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section,summary { 
+	display:block;
+}
+
+/*======================================================
+
+Copyright (c) 2009, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.net/yui/license.txt
+version: 3.0.0
+build: 1549
+	
+	Font-size Adjustment
+	
+	77% = 10px	|	122% = 16px	|	167% = 22px	
+	85% = 11px	|	129% = 17px	|	174% = 23px
+	92% = 12px	|	136% = 18px	|	182% = 24px
+	100% = 13px	|	144% = 19px	|	189% = 25px
+	107% = 14px	|	152% = 20px	|	197% = 26px
+	114% = 15px	|	159% = 21px	|
+
+=======================================================*/
+
+/**
+ * Percents could work for IE, but for backCompat purposes, we are using keywords.
+ * x-small is for IE6/7 quirks mode.
+ */
+body {
+	font-size: 13px;
+	*font-size: small; /* for IE */
+	*font: x-small; /* for IE in quirks mode */
+	line-height: 1.231;	
+}
+
+/**
+ * Nudge down to get to 13px equivalent for these form elements
+ */ 
+select,
+input,
+button,
+textarea {
+	font:99%;
+}
+
+/**
+ * To help tables remember to inherit
+ */
+table {
+	font-size:inherit;
+	font:100%;
+}
+
+/**
+ * Bump up IE to get to 13px equivalent for these fixed-width elements
+ */
+pre,
+code,
+kbd,
+samp,
+tt {
+	*font-size:108%;
+	line-height:100%;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<title>ログイントップ</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="copyright" content="" />
+<meta name="author" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<link href="../shared/css/shared.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>
+window.onload = function(){
+	setTimeout(function(){window.scrollTo(0,1);},100);
+}
+</script>
+<style type="text/css">
+html{background:#f2f2f0;}
+</style>
+<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<body id="login">
+<div id="page">
+<div id="contents">
+<h1 id="logo"><img src="images/logo.png" width="170" alt="" /></h1>
+
+<div class="wrap-login">
+<form action="" method="post">
+<p class="input-id"><input name="id" type="text" placeholder="メールアドレス" /></p>
+<p class="input-pw"><input name="pw" type="text" placeholder="パスワード" /></p>
+
+<p class="btn-login btn-type-txt-l"><a href="#">ログイン</a></p>
+</form>
+
+<p class="reissue"><a href="#">パスワードの再発行</a></p>
+</div>
+
+<div class="wrap-signup">
+<p class="btn-signup btn-type-txt-l"><a href="#">会員登録</a></p>
+</div>
+</div><!-- /#contents -->
+
+
+<footer id="footer">
+<div id="footer-inner">
+<p id="copyright"><small>Copyright&copy;DIP Corporation</small></p>
+</div><!-- /#footer-inner -->
+</footer>
+
+<!--//#page-->
+</div>
+</body>
+</html>

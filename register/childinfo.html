@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<title>こども情報登録　入力</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="copyright" content="" />
+<meta name="author" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<link href="../shared/css/shared.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>
+window.onload = function(){
+	setTimeout(function(){window.scrollTo(0,1);},100);
+}
+</script>
+<style type="text/css">
+html{background:#f2f2f0;}
+</style>
+<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<body id="register">
+<div id="page">
+<header id="header">
+<p><img src="images/logo_s.png" width="71" alt="マゴラブ"></p>
+<h1>会員登録</h1>
+</header>
+<div id="contents">
+
+<form action="" method="post">
+<p class="txt-lead">お子様の情報を登録してみましょう</p>
+
+<section id="sec-name-child" class="section">
+<h2>名前</h2>
+<p><input name="" type="text" placeholder="お名前（愛称）" /></p>
+</section>
+
+<section id="sec-birth-child" class="section">
+<h2>生年月日</h2>
+<p>
+<select name="input-birth-y">
+<option>2012</option>
+<option>2013</option>
+</select>
+<select name="input-birth-m">
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5</option>
+<option>6</option>
+<option>7</option>
+<option>8</option>
+<option>9</option>
+<option>10</option>
+</select>
+<select name="input-birth-d">
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5</option>
+<option>6</option>
+<option>7</option>
+<option>8</option>
+<option>9</option>
+<option>10</option>
+</select>
+</p>
+</section>
+
+<section id="sec-gender-child" class="section">
+<h2>性別</h2>
+<p>
+<label onClick="">
+<input type="radio" name="gender" value="male" id="gender_0">
+男の子</label>
+<label onClick="">
+<input type="radio" name="gender" value="female" id="gender_1">
+女の子</label>
+</p>
+</section>
+
+<p class="btn-signup btn-type-txt-l"><a href="#">登録する</a></p>
+</form>
+
+</div><!-- /#contents -->
+
+
+<footer id="footer">
+<div id="footer-inner">
+<p id="copyright"><small>Copyright&copy;DIP Corporation</small></p>
+</div><!-- /#footer-inner -->
+</footer>
+
+<!--//#page-->
+</div>
+</body>
+</html>
