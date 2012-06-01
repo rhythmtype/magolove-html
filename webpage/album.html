@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<title>アルバム個別（Web）</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="copyright" content="" />
+<meta name="author" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<link href="../shared/css/shared.css" rel="stylesheet" type="text/css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/shared/js/libs/jquery-1.7.2.min.js"><\/script>')</script>-->
+<script>
+window.onload = function(){
+	setTimeout(function(){window.scrollTo(0,1);},100);
+}
+$().ready(function() {
+	$(function(){
+		$("#footer .link-pagetop a").click(function(){
+			$("html, body ").animate({scrollTop:0}, 600);
+			return false;
+		});
+	})
+});
+</script>
+<style type="text/css">
+</style>
+<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<body id="album" class="webview">
+<!--forFacebook-->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!--//forFacebook-->
+
+<div id="page">
+<header id="header">
+<div class="header-bar">
+<h1 id="logo"><img src="../shared/images/logo.png" width="90" alt="マゴラブ" /></h1>
+<p class="tagline">リードが入ります。</p>
+</div>
+</header>
+
+<div id="contents">
+<article id="each-album">
+<header class="each-album-header">
+<div class="wrap">
+<h1>ももちゃんと公園で散歩ももちゃんと公園で</h1>
+<p class="num-pht"><span class="num">18</span>枚</p>
+<p class="create-date">2012.5.10作成</p>
+
+</div>
+</header>
+
+<div class="list-pht-thm">
+<ol>
+<li><a href="#"><img src="../shared/photo/dummy_thm_01.jpg" width="61" alt="" ></a></li>
+<li><a href="#"><img src="../shared/photo/dummy_thm_02.jpg" width="61" alt="" ></a></li>
+<li><a href="#"><img src="../shared/photo/dummy_thm_03.jpg" width="61" alt="" ></a></li>
+<li><a href="#"><img src="../shared/photo/dummy_thm_04.jpg" width="61" alt="" ></a></li>
+<li><a href="#"><img src="../shared/photo/dummy_thm_05.jpg" width="61" alt="" ></a></li>
+<li><a href="#"><img src="../shared/photo/dummy_thm_01.jpg" width="61" alt="" ></a></li>
+<li><a href="#"><img src="../shared/photo/dummy_thm_02.jpg" width="61" alt="" ></a></li>
+<li><a href="#"><img src="../shared/photo/dummy_thm_03.jpg" width="61" alt="" ></a></li>
+<li><a href="#"><img src="../shared/photo/dummy_thm_04.jpg" width="61" alt="" ></a></li>
+<li><a href="#"><img src="../shared/photo/dummy_thm_05.jpg" width="61" alt="" ></a></li>
+<li><a href="#"><img src="../shared/photo/dummy_thm_01.jpg" width="61" alt="" ></a></li>
+<li><a href="#"><img src="../shared/photo/dummy_thm_02.jpg" width="61" alt="" ></a></li>
+</ol>
+</div>
+
+<form action="" method="post">
+<footer id="web-footer">
+<div class="block-login">
+<p class="btn-type-txt-l btn-login"><input type="submit" id="" value="ログイン" /></p>
+</div>
+
+<div class="social-btn">
+<div class="btn-fb">
+<div class="fb-like" data-href="http://facebook.com/" data-send="false" data-layout="button_count" data-width="120" data-show-faces="false"></div>
+</div>
+<div class="btn-tw">
+<a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>
+<div class="btn-mixi">
+<a href="http://mixi.jp/share.pl" class="mixi-check-button" data-key="DUMMY">Check</a><script type="text/javascript" src="http://static.mixi.jp/js/share.js"></script>
+</div>
+</div><!--/.social-btn-->
+<p class="btn-type-txt-l btn-send-mail"><input type="submit" id="" value="メールを送る" /></p>
+</footer>
+</form>
+
+</article>
+
+</div><!-- /#contents -->
+
+
+<footer id="footer">
+<!--<p class="link-pagetop"><a href="#page">このページの上部へ</a></p>-->
+<div id="footer-inner">
+<p id="copyright"><small>Copyright&copy;DIP Corporation</small></p>
+</div><!-- /#footer-inner -->
+</footer>
+
+<!--//#page-->
+</div>
+</body>
+</html>

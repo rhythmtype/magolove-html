@@ -2,7 +2,7 @@
 /*
 *
 *	Title: magolove - main
-*	Last Modified: 2012-05-31
+*	Last Modified: 2012-06-01
 *	Description: WebApp Page Style
 *
 */
@@ -81,17 +81,16 @@ a:active {
 	border-left: 1px solid #e25270;
 	float: right;
 }
+#main-menu li a {
+	display: block;
+}
 #main-menu .hmenu a {
-	display: block;	
 	background: url(../images/btn_menu_on.png) scroll no-repeat 0 0;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	-ms-background-size: cover;
 	background-size: cover;
-}
-#main-menu .hnotify a {
-	display: block;
 }
 #main-menu .hnotify a dd {
 	display: none;
@@ -463,7 +462,9 @@ a:active {
 /* form style
 --------------------*/
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+input[type="email"],
+textarea {
 	width: 100%;
 	-moz-box-shadow: 2px 2px 0 #f2f2f2 inset;
 	-webkit-box-shadow: 2px 2px 0 #f2f2f2 inset;
@@ -478,6 +479,11 @@ input[type="password"] {
 	-o-border-radius: 8px;
 	-ms-border-radius: 8px; 
 	border-radius: 8px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
 	-moz-background-clip:padding;
 	-webkit-background-clip:padding-box;
 	-o-background-clip:padding-box;
@@ -486,11 +492,15 @@ input[type="password"] {
 	font-size: 114%;
 }
 input[type="text"]::-webkit-input-placeholder,
-input[type="password"]::-webkit-input-placeholder {
+input[type="password"]::-webkit-input-placeholder,
+input[type="email"]::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
 	color: #ccc;
 }
 input[type="text"]:focus,
-input[type="password"]:focus {
+input[type="password"]:focus,
+input[type="email"]:focus,
+textarea:focus {
 	-moz-box-shadow: 2px 2px 0 #f2f2f2 inset, 0 0 8px #ffdbe2;
 	-webkit-box-shadow: 2px 2px 0 #f2f2f2 inset, 0 0 8px #ffdbe2;
 	-o-box-shadow: 2px 2px 0 #f2f2f2 inset, 0 0 8px #ffdbe2;
@@ -499,8 +509,13 @@ input[type="password"]:focus {
 	border: 1px solid #ff7390;
 }
 input[type="text"]:focus::-webkit-input-placeholder,
-input[type="password"]:focus::-webkit-input-placeholder {
+input[type="password"]:focus::-webkit-input-placeholder,
+input[type="email"]:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder {
 	color: #fff;
+}
+textarea {
+	width: 100%;
 }
 select {
 	height: 2em;
@@ -511,11 +526,51 @@ label {
 	margin: 0 20px 15px 0;
 	font-size: 114%;
 }
-
+input[type="submit"] {
+	background: none;
+	border: none;
+}
 
 /* button style
 --------------------*/
 
+/*group*/
+.btn-group-type-yn ul {
+	display: table;
+	width: 100%;
+}
+.btn-group-type-yn li {
+	display: table-cell;
+	width: 50%;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.btn-group-type-yn li:nth-child(1) {
+	padding-right: 9px;
+}
+.btn-group-type-yn li:nth-child(2) {
+	padding-left: 9px;
+}
+.btn-group-type-yn input[type="submit"] {
+	font-weight: bold;
+}
+.btn-group-type-yn li:nth-child(1) input[type="submit"] {
+	background: #fff;
+	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #fff));
+	padding: 8px 0;
+	color: #666;
+}
+.btn-group-type-yn li:nth-child(2) input[type="submit"] {
+	background: #ff7390;
+	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #ff7390));
+	padding: 8px 0;
+	color: #fff;
+}
+
+/*each btn*/
 .btn-type-txt,
 .btn-type-txt-l,
 .btn-type-txt-02 {
@@ -568,6 +623,35 @@ label {
 	-o-border-radius: 10px;
 	-ms-border-radius: 10px; 
 	border-radius: 10px;
+}
+
+/*input submit*/
+.btn-type-txt input[type="submit"],
+.btn-type-txt-l input[type="submit"],
+.btn-type-txt-02 input[type="submit"] {
+	display: block;
+	width: 100%;
+	background: none;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	-o-border-radius: 8px;
+	-ms-border-radius: 8px; 
+	border-radius: 8px;
+	position: relative;
+	z-index: 10;
+}
+.btn-type-txt-l input[type="submit"] {
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-o-border-radius: 10px;
+	-ms-border-radius: 10px; 
+	border-radius: 10px;
+}
+
+.btn-type-img input[type="submit"] {
+	width: 100%;
+	height: 100%;
+	text-indent: -9999px;
 }
 
 
@@ -962,7 +1046,71 @@ label {
 
 /* ===================================
 
-	3: ALBUM
+	3: SEND
+
+====================================== */
+#send .hcamera a {
+	background: url(../images/btn_camera_on.png) scroll no-repeat 0 0;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	-ms-background-size: cover;
+	background-size: cover;
+	pointer-events: none;
+}
+#send .hcamera img {
+	visibility: hidden;
+}
+#send #send-photo {
+	margin: 15px;
+}
+#send #send-photo h1 {
+	margin: 0 0 15px;
+	padding-left: 12px;
+	font-size: 114%;
+	position: relative;
+}
+#send #send-photo h1:after {
+	content: "";
+	display: block;
+	width: 6px;
+	height: 100%;
+	background: #ff7390;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-o-border-radius: 3px;
+	-ms-border-radius: 3px; 
+	border-radius: 3px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#send #send-photo .txt-lead {
+	margin: 0 0 10px;
+	font-size: 107%;
+}
+#send #send-photo .btn-select-photo,
+#send #send-photo .btn-send {
+	margin: 0 68px 20px;
+}
+#send #send-photo .btn-select-photo input[type="submit"],
+#send #send-photo .btn-send input[type="submit"] {
+	background: #ff7390;
+	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #ff7390));
+	padding: 8px 0;
+	color: #fff;
+	font-weight: bold;
+}
+.wrap-option.disabled {
+	opacity: 0.5;
+	pointer-events: none;
+}
+.wrap-option.disabled {
+}
+
+/* ===================================
+
+	4: ALBUM
 
 ====================================== */
 #list-album {
@@ -1106,9 +1254,13 @@ label {
 }
 #album.each-photo .feed-item .pht-info .comment {
 	min-height: 32px;
-	padding-left: 56px;
+	background: none;
+	padding: 10px 12px 10px 56px;
 	position: relative;
+	color: #666;
+	font-size: 100%;
 }
+
 #album.each-photo .feed-item .pht-info .comment .post-user {
 	position: absolute;
 	top: 9px;
@@ -1117,6 +1269,7 @@ label {
 #album.each-photo .feed-item .pht-info .comment .post-date {
 	font-family: Futura, Arial, sans-serif;
 	font-size: 92%;
+	font-weight: bold;
 }
 #album.each-photo #nav-each .pager-post li {
 	margin: -17px 0 0;
@@ -1170,9 +1323,11 @@ label {
 	display: inline-block;
 }*/
 #album.each-photo .feed-item .block-react {
-	padding: 5px 14px 0 24px;
+	padding: 5px 14px 10px 24px;
 }
 #album.each-photo .feed-item .list-viewer {
+	max-width: none;
+	background: none;
 	margin: 0 0 10px;
 }
 #album.each-photo .feed-item .list-viewer li {
@@ -1406,9 +1561,13 @@ label {
 }
 
 
+#album .new-album-input {
+	margin: 0 15px 50px;
+}
+
 /* ===================================
 
-	4: CALENDAR
+	5: CALENDAR
 
 ====================================== */
 #calendar #list-month {
@@ -1566,9 +1725,12 @@ label {
 }
 .list-friend .user-name {
 	margin: 10px 0 0;
+	padding-right: 80px;
 	overflow: hidden;
 	font-size: 122%;
 	font-weight: bold;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 .list-friend .btn-remove {
 	position: absolute;
@@ -1916,6 +2078,10 @@ label {
 #register .section h2 + p {
 	padding: 0 10px;
 }
+#register #sec-mail p {
+	margin: 0 0 15px;
+	font-size: 114%;
+}
 #register .btn-signup {
 	margin: 25px 68px 0;
 	clear: both;
@@ -1937,4 +2103,140 @@ label {
 	color: #666;
 	font-weight: bold;
 	text-align: center;
+}
+
+#register.terms .wrap-terms {
+	margin: 20px 0;
+}
+#register.terms .wrap-terms p {
+	margin: 0 0 15px;
+	font-size: 107%;
+}
+#register.terms .btn-group-type-yn {
+	margin: 0 11px 50px;
+}
+
+
+/* ===================================
+
+	: UTILITY
+
+====================================== */
+#terms #terms-list {
+	margin: 20px 15px;
+}
+#terms #terms-list h1 {
+	margin: 0 0 15px;
+	font-size: 136%;
+}
+#terms #terms-list h2 {
+	margin: 0 0 10px;
+	padding-left: 12px;
+	font-size: 114%;
+	position: relative;
+}
+#terms #terms-list h2:after {
+	content: "";
+	display: block;
+	width: 6px;
+	height: 100%;
+	background: #ff7390;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-o-border-radius: 3px;
+	-ms-border-radius: 3px; 
+	border-radius: 3px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#terms #terms-list p {
+	margin: 0 0 15px;
+	font-size: 114%;
+}
+
+
+/* ===================================
+
+	: WEB VIEW
+
+====================================== */
+#album.webview .tagline {
+	padding: 15px 12px 0;
+	overflow: hidden;
+	white-space: nowrap;
+	color: #fff;
+}
+#album.webview #each-album .each-album-header {
+	margin: 0 0 12px;
+}
+#album.webview #each-album .each-album-header .wrap {
+	padding: 3px 15px 0;
+}
+#album.webview .block-login {
+	background: #fff;
+	margin: 0 0 15px;
+	padding: 10px 82px;
+}
+#album.webview .block-login .btn-login input {
+	background: #ff7390;
+	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #ff7390));
+	padding: 10px 0;
+	color: #fff;
+	font-weight: bold;
+	font-size: 122%;
+}
+#album.webview #web-footer .social-btn {
+	margin: 0 0 15px;
+	text-align: center;
+}
+#album.webview #web-footer .social-btn > div {
+	min-width: 100px;
+	display: inline-block;
+}
+#album.webview #web-footer .btn-send-mail {
+	margin: 0 82px 10px;
+}
+#album.webview #web-footer .btn-send-mail input {
+	background: #fff;
+	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #fff));
+	padding: 8px 0 8px 30px;
+	color: #666;
+	font-weight: bold;
+}
+#album.webview #web-footer .btn-send-mail:before {
+	content: "";
+	display: block;
+	width: 26px;
+	height: 19px;
+	background: url(../../webpage/images/icn_mail.png) scroll no-repeat 0 0;
+	-webkit-background-size: 22px 19px;
+	-moz-background-size: 22px 19px;
+	-o-background-size: 22px 19px;
+	-ms-background-size: 22px 19px;
+	background-size: 22px 19px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -9px 0 0 -3.8em;
+	z-index: 30;
+}
+
+#album.each-photo.webview #contents {
+	padding-top: 10px;
+}
+#album.each-photo.webview #web-footer {
+	margin: 0 -24px;
+}
+#album.each-photo.webview .feed-item .block-react {
+	padding-bottom: 0;
+}
+#album.each-photo.webview .feed-item .list-viewer {
+	margin-bottom: 0;
+}
+#album.each-photo.webview #contents.each-photo-only {
+	padding-top: 0;
+}
+#album.each-photo.webview #contents.each-photo-only .pht-info {
+	padding-top: 10px;
 }

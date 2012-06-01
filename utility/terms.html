@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<title>フィードトップ</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="copyright" content="" />
+<meta name="author" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+
+<link href="../shared/css/shared.css" rel="stylesheet" type="text/css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/shared/js/libs/jquery-1.7.2.min.js"><\/script>')</script>-->
+<script>
+window.onload = function(){
+	setTimeout(function(){window.scrollTo(0,1);},100);
+}
+$().ready(function() {
+	$(function(){
+		$("#footer .link-pagetop a").click(function(){
+			$("html, body ").animate({scrollTop:0}, 600);
+			return false;
+		});
+	})
+	var current = $('#header #main-menu li.cur');
+	$('.hmenu a').click(
+		function() {
+			var winHeight = window.innerHeight ? window.innerHeight : $(window).height();
+			var menuHeight = $('#header-menu').innerHeight();
+			var menuShowHeight = (menuHeight > winHeight) ? menuHeight : winHeight;
+			console.log(menuHeight);
+			$('#header-menu').css('height',menuShowHeight);
+			
+			$('html, body').animate({scrollTop:0}, 600);
+			$('#header-menu').slideToggle();
+			$('#contents, #footer').fadeToggle();
+			current.toggleClass('cur');
+			$('#header #main-menu .hmenu').toggleClass('cur');
+			return false;
+		}
+	);
+	$('.hnotify a').click(
+		function() {
+			var winHeight = window.innerHeight ? window.innerHeight : $(window).height();
+			var menuHeight = $('#header-notify').innerHeight();
+			var menuShowHeight = (menuHeight > winHeight) ? menuHeight : winHeight;
+			console.log(menuHeight);
+			$('#header-notify').css('height',menuShowHeight);
+			
+			$('html, body').animate({scrollTop:0}, 600);
+			$('#header-notify').slideToggle();
+			$('#contents, #footer').fadeToggle();
+			current.toggleClass('cur');
+			$('#header #main-menu .hnotify').toggleClass('cur');
+			return false;
+		}
+	);
+});
+</script>
+<style type="text/css">
+</style>
+<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<body id="terms">
+<div id="page">
+<header id="header">
+<div class="header-bar">
+<h1 id="logo"><img src="../shared/images/logo.png" width="90" alt="マゴラブ" /></h1>
+<nav id="main-menu">
+<ul>
+<li class="hmenu"><a href="#header-menu"><img src="../shared/images/btn_menu.png" alt="メニュー" width="60" /></a></li>
+<li class="hcamera"><a href="#"><img src="../shared/images/btn_camera.png" alt="写真投稿" width="60" /></a></li>
+<li class="hnotify"><a href="#"><dl><dt><img src="../shared/images/btn_notify.png" alt="お知らせ" width="59" /></dt><dd>5</dd></dl></a></li>
+</ul>
+</nav>
+</div>
+
+<div id="header-menu">
+<div class="wrap">
+<div class="user-prof">
+<p class="user-icon"><img src="../shared/photo/dummy_icon_01.jpg" width="60" alt=""></p>
+<p class="user-name"><a href="#">ユーザー名</a></p>
+</div>
+<div class="user-stat">
+<div><a href="#"><dl>
+<dt>写真数</dt>
+<dd>56</dd>
+</dl></a></div>
+<div><a href="#"><dl>
+<dt>アルバム数</dt>
+<dd>2</dd>
+</dl></a></div>
+<div><a href="#"><dl>
+<dt>フレンド数</dt>
+<dd>12</dd>
+</dl></a></div>
+</div>
+<ul class="list-menu">
+<li><a href="#">ホーム</a></li>
+<li><a href="#">カレンダー</a></li>
+<li><a href="#">フレンド</a></li>
+<li><a href="#">アルバム</a></li>
+<li><a href="#">ヘルプ</a></li>
+</ul>
+
+<ul class="list-setting">
+<li><a href="#">設定</a></li>
+<li><a href="#">ログアウト</a></li>
+</ul>
+
+</div>
+</div>
+<!-- /#header-menu -->
+
+<div id="header-notify">
+<div class="wrap">
+<p class="ttl-notify">お知らせ</p>
+<div class="block">
+<p class="icn"><img src="../shared/photo/dummy_icon_06.jpg" width="40" alt="" /></p>
+<p><a href="#">もえちゃんママ</a>さんと<a href="#">神田川俊郎</a>さんがあなたの写真にスタンプをおしました。</p>
+</div>
+<div class="block">
+<p class="icn"><img src="../shared/images/icn_notify_official.png" width="40" alt="" /></p>
+<p><a href="#">ムービー</a>がつくれるようになりました！</p>
+</div>
+<div class="block">
+<p class="icn"><img src="../shared/images/icn_notify_calendar.png" width="40" alt="" /></p>
+<p>きょうは<a href="#">こどもの日</a>です。</p>
+</div>
+<div class="block">
+<p class="icn"><img src="../shared/photo/dummy_icon_06.jpg" width="40" alt="" /></p>
+<p><a href="#">もえちゃんママ</a>さんと<a href="#">神田川俊郎</a>さんがあなたの写真にスタンプをおしました。</p>
+</div>
+<div class="block">
+<p class="icn"><img src="../shared/images/icn_notify_official.png" width="40" alt="" /></p>
+<p><a href="#">ムービー</a>がつくれるようになりました！</p>
+</div>
+<div class="block">
+<p class="icn"><img src="../shared/images/icn_notify_calendar.png" width="40" alt="" /></p>
+<p>きょうは<a href="#">こどもの日</a>です。</p>
+</div>
+</div>
+</div>
+<!-- /#header-notify -->
+</header>
+
+<div id="contents">
+<article id="terms-list">
+<h1>利用規約</h1>
+
+<p>本利用規約は、以下に規定される｢アカウント規約｣｢マゴラブ利用規約｣｢マゴラブプレミアム利用規約｣｢個人情報の取扱いについて｣により構成されます。<br />
+本利用規約はこれら構成する要素全てを含むものとし、株式会社ディップ(以下、｢運営会社｣といいます)により提供される本利用規約に関係するサービスの利用者(以下、単に｢利用者｣といいます)によるこれらのサービスの利用は、これらの構成要素全てについて同意したものとして取扱われます。</p>
+<p>本利用規約は日本法を準拠法とし、東京地方裁判所を第一審の専属管轄裁判所とします。本利用規約の表示は全て日本語により表示され、日本語のみにより解釈されます。<br />
+本利用規約は、運営会社の判断により事前の予告なく任意に変更できるものとします。利用者は変更された時点での内容に同意しているものとみなされ、利用者はこれに同意します。本利用規約に関係するサイトは、事前の予告なく任意の理由で提供サービス内容の変更及びサービス提供を中断・停止する場合があります。</p>
+
+<section>
+<h2>アカウント規約</h2>
+<p>利用者は、本利用規約に同意したうえでアカウント情報(登録された情報及びアカウントに関する全ての権利、権益を含む。以下同様)の登録を行い、登録したアカウント情報を使用して、運営会社が運営する｢マゴラブ｣及びその他のサイトを利用することができるものとします。利用者がこれらのサイトを利用する場合には、各サイトの利用規約の規定に従うものとします。</p>
+</section>
+</article>
+</div><!-- /#contents -->
+
+
+<footer id="footer">
+<!--<p class="link-pagetop"><a href="#page">このページの上部へ</a></p>-->
+<div id="footer-inner">
+<p id="copyright"><small>Copyright&copy;DIP Corporation</small></p>
+</div><!-- /#footer-inner -->
+</footer>
+
+<!--//#page-->
+</div>
+</body>
+</html>
