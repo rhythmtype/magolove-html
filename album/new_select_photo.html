@@ -11,9 +11,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <meta name="format-detection" content="telephone=no" />
 <link href="../shared/css/shared.css" rel="stylesheet" type="text/css" />
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="/shared/js/libs/jquery-1.7.2.min.js"><\/script>')</script>-->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/shared/js/libs/jquery-1.7.2.min.js"><\/script>')</script>
 <script>
 window.onload = function(){
 	setTimeout(function(){window.scrollTo(0,1);},100);
@@ -39,18 +38,6 @@ $().ready(function() {
 			$('#contents, #footer').fadeToggle();
 			current.toggleClass('cur');
 			$('#header #main-menu .hmenu').toggleClass('cur');
-			return false;
-		}
-	);
-	$('.wrap-btn-album .btn-share a, .block-share .btn-close a').click(
-		function() {
-			$('.block-share').fadeToggle();
-			return false;
-		}
-	);
-	$('.wrap-btn-album .btn-edit a, .block-edit .btn-close a').click(
-		function() {
-			$('.block-edit').fadeToggle();
 			return false;
 		}
 	);
@@ -125,67 +112,38 @@ $().ready(function() {
 </ul>
 </nav>
 
-<article id="each-album">
-<header class="each-album-header">
-<div class="wrap">
-<h1>ももちゃんと公園で散歩ももちゃんと公園で</h1>
-<p class="num-pht"><span class="num">18</span>枚</p>
-<p class="create-date">2012.5.10作成</p>
-
+<div id="new-album-select">
 <form action="" method="post">
-<ul class="wrap-btn-album">
-<li class="btn-edit"><a href="#"><img src="images/btn_edit_album.png" width="37" alt="編集"></a></li>
-<li class="btn-share"><a href="#"><img src="images/btn_share_album.png" width="37" alt="共有"></a></li>
-<!--<li class="btn-edit btn-type-img"><input type="submit" id="" value="編集" /></li>
-<li class="btn-share btn-type-img"><input type="submit" id="" value="共有" /></li>-->
-</ul>
-</form>
-</div>
-</header>
 
 <div class="list-pht-thm">
 <ol>
-<li><a href="#"><img src="../shared/photo/dummy_thm_01.jpg" width="61" alt="" ></a></li>
-<li><a href="#"><img src="../shared/photo/dummy_thm_02.jpg" width="61" alt="" ></a></li>
-<li><a href="#"><img src="../shared/photo/dummy_thm_03.jpg" width="61" alt="" ></a></li>
-<li><a href="#"><img src="../shared/photo/dummy_thm_04.jpg" width="61" alt="" ></a></li>
-<li><a href="#"><img src="../shared/photo/dummy_thm_05.jpg" width="61" alt="" ></a></li>
-<li><a href="#"><img src="../shared/photo/dummy_thm_01.jpg" width="61" alt="" ></a></li>
-<li><a href="#"><img src="../shared/photo/dummy_thm_02.jpg" width="61" alt="" ></a></li>
-<li><a href="#"><img src="../shared/photo/dummy_thm_03.jpg" width="61" alt="" ></a></li>
-<li><a href="#"><img src="../shared/photo/dummy_thm_04.jpg" width="61" alt="" ></a></li>
-<li><a href="#"><img src="../shared/photo/dummy_thm_05.jpg" width="61" alt="" ></a></li>
-<li><a href="#"><img src="../shared/photo/dummy_thm_01.jpg" width="61" alt="" ></a></li>
-<li><a href="#"><img src="../shared/photo/dummy_thm_02.jpg" width="61" alt="" ></a></li>
+<li><label onClick=""><input name="" type="checkbox" value=""><span><img src="../shared/photo/dummy_thm_01.jpg" width="61" alt="" ></span></label></li>
+<li><label onClick=""><input name="" type="checkbox" value=""><span><img src="../shared/photo/dummy_thm_02.jpg" width="61" alt="" ></span></label></li>
+<li><label onClick=""><input name="" type="checkbox" value=""><span><img src="../shared/photo/dummy_thm_03.jpg" width="61" alt="" ></span></label></li>
+<li><label onClick=""><input name="" type="checkbox" value=""><span><img src="../shared/photo/dummy_thm_04.jpg" width="61" alt="" ></span></label></li>
+<li><label onClick=""><input name="" type="checkbox" value=""><span><img src="../shared/photo/dummy_thm_05.jpg" width="61" alt="" ></span></label></li>
+<li><label onClick=""><input name="" type="checkbox" value=""><span><img src="../shared/photo/dummy_thm_01.jpg" width="61" alt="" ></span></label></li>
+<li><label onClick=""><input name="" type="checkbox" value=""><span><img src="../shared/photo/dummy_thm_02.jpg" width="61" alt="" ></span></label></li>
+<li><label onClick=""><input name="" type="checkbox" value=""><span><img src="../shared/photo/dummy_thm_03.jpg" width="61" alt="" ></span></label></li>
+<li><label onClick=""><input name="" type="checkbox" value=""><span><img src="../shared/photo/dummy_thm_04.jpg" width="61" alt="" ></span></label></li>
+<li><label onClick=""><input name="" type="checkbox" value=""><span><img src="../shared/photo/dummy_thm_05.jpg" width="61" alt="" ></span></label></li>
+<li><label onClick=""><input name="" type="checkbox" value=""><span><img src="../shared/photo/dummy_thm_01.jpg" width="61" alt="" ></span></label></li>
+<li><label onClick=""><input name="" type="checkbox" value=""><span><img src="../shared/photo/dummy_thm_02.jpg" width="61" alt="" ></span></label></li>
+<li><label onClick=""><input name="" type="checkbox" value=""><span><img src="../shared/photo/dummy_thm_05.jpg" width="61" alt="" ></span></label></li>
+<li><label onClick=""><input name="" type="checkbox" value=""><span><img src="../shared/photo/dummy_thm_01.jpg" width="61" alt="" ></span></label></li>
+<li><label onClick=""><input name="" type="checkbox" value=""><span><img src="../shared/photo/dummy_thm_02.jpg" width="61" alt="" ></span></label></li>
+<li><label onClick=""><input name="" type="checkbox" value=""><span><img src="../shared/photo/dummy_thm_03.jpg" width="61" alt="" ></span></label></li>
 </ol>
 </div>
 
-
-<div class="block-edit">
-<div class="wrap">
-<ul class="btn-edit-album">
-<li class="btn-rename btn-type-txt-l"><a href="#">アルバム名を変更</a></li>
-<li class="btn-add-photo btn-type-txt-l"><a href="#">写真を追加する</a></li>
-<li class="btn-del-photo btn-type-txt-l"><a href="#">写真を削除する</a></li>
-<li class="btn-del-album btn-type-txt-l"><a href="#">アルバムを削除</a></li>
+<div class="btn-group-type-yn">
+<ul>
+<li><span class="btn-type-txt-l"><input type="submit" id="" value="キャンセル" /></span></li>
+<li><span class="btn-type-txt-l"><input type="submit" id="" value="作成" /></span></li>
 </ul>
-<p class="btn-close"><a href="#"><img src="images/btn_close.png" width="40" alt=""></a></p>
 </div>
+</form>
 </div>
-
-<div class="block-share">
-<div class="wrap">
-<h2>アルバム「公園で散歩」を共有する</h2>
-<p class="share-url">http://magolove.jp/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-<ul class="wrap-btn">
-<li><a href="#"><img src="../shared/images/btn_share_fb.png" width="42" alt=""></a></li>
-<li><a href="#"><img src="../shared/images/btn_share_tw.png" width="42" alt=""></a></li>
-<li><a href="#"><img src="../shared/images/btn_share_mail.png" width="42" alt=""></a></li>
-</ul>
-<p class="btn-close"><a href="#"><img src="../shared/images/btn_close.png" width="40" alt="閉じる"></a></p>
-</div>
-</div>
-</article>
 
 </div><!-- /#contents -->
 

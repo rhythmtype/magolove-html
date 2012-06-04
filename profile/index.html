@@ -3,13 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
-<title>アルバム個別</title>
+<title>プロフィールインデックス</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <meta name="copyright" content="" />
 <meta name="author" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <meta name="format-detection" content="telephone=no" />
+
 <link href="../shared/css/shared.css" rel="stylesheet" type="text/css" />
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
@@ -42,18 +43,6 @@ $().ready(function() {
 			return false;
 		}
 	);
-	$('.wrap-btn-album .btn-share a, .block-share .btn-close a').click(
-		function() {
-			$('.block-share').fadeToggle();
-			return false;
-		}
-	);
-	$('.wrap-btn-album .btn-edit a, .block-edit .btn-close a').click(
-		function() {
-			$('.block-edit').fadeToggle();
-			return false;
-		}
-	);
 });
 </script>
 <style type="text/css">
@@ -61,7 +50,7 @@ $().ready(function() {
 <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
 
-<body id="album">
+<body id="profile">
 <div id="page">
 <header id="header">
 <div class="header-bar">
@@ -117,33 +106,23 @@ $().ready(function() {
 
 <div id="contents">
 
-<nav id="tab-nav">
-<ul>
-<li class="nav-feed"><a href="#">フィード</a></li>
-<li class="nav-calendar"><a href="#">カレンダー</a></li>
-<li class="nav-album current"><a href="#">アルバム</a></li>
-</ul>
-</nav>
+<article id="user-profile">
+<header class="profile-header">
+<h1 class="user-name">ユーザー名が入りますユーザー名が</h1>
+<p class="user-icon"><img src="../shared/photo/dummy_icon_01.jpg" width="50" alt=""></p>
 
-<article id="each-album">
-<header class="each-album-header">
-<div class="wrap">
-<h1>ももちゃんと公園で散歩ももちゃんと公園で</h1>
-<p class="num-pht"><span class="num">18</span>枚</p>
-<p class="create-date">2012.5.10作成</p>
-
-<form action="" method="post">
-<ul class="wrap-btn-album">
-<li class="btn-edit"><a href="#"><img src="images/btn_edit_album.png" width="37" alt="編集"></a></li>
-<li class="btn-share"><a href="#"><img src="images/btn_share_album.png" width="37" alt="共有"></a></li>
-<!--<li class="btn-edit btn-type-img"><input type="submit" id="" value="編集" /></li>
-<li class="btn-share btn-type-img"><input type="submit" id="" value="共有" /></li>-->
-</ul>
-</form>
-</div>
+<table class="user-stat">
+<tr>
+<th>アルバム</th><th>フレンド</th>
+</tr>
+<tr>
+<td><a href="#">2</a></td><td><a href="#">14</a></td>
+</tr>
+</table>
 </header>
 
 <div class="list-pht-thm">
+<p class="num-pht"><span class="num">100</span>枚</p>
 <ol>
 <li><a href="#"><img src="../shared/photo/dummy_thm_01.jpg" width="61" alt="" ></a></li>
 <li><a href="#"><img src="../shared/photo/dummy_thm_02.jpg" width="61" alt="" ></a></li>
@@ -160,31 +139,6 @@ $().ready(function() {
 </ol>
 </div>
 
-
-<div class="block-edit">
-<div class="wrap">
-<ul class="btn-edit-album">
-<li class="btn-rename btn-type-txt-l"><a href="#">アルバム名を変更</a></li>
-<li class="btn-add-photo btn-type-txt-l"><a href="#">写真を追加する</a></li>
-<li class="btn-del-photo btn-type-txt-l"><a href="#">写真を削除する</a></li>
-<li class="btn-del-album btn-type-txt-l"><a href="#">アルバムを削除</a></li>
-</ul>
-<p class="btn-close"><a href="#"><img src="images/btn_close.png" width="40" alt=""></a></p>
-</div>
-</div>
-
-<div class="block-share">
-<div class="wrap">
-<h2>アルバム「公園で散歩」を共有する</h2>
-<p class="share-url">http://magolove.jp/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-<ul class="wrap-btn">
-<li><a href="#"><img src="../shared/images/btn_share_fb.png" width="42" alt=""></a></li>
-<li><a href="#"><img src="../shared/images/btn_share_tw.png" width="42" alt=""></a></li>
-<li><a href="#"><img src="../shared/images/btn_share_mail.png" width="42" alt=""></a></li>
-</ul>
-<p class="btn-close"><a href="#"><img src="../shared/images/btn_close.png" width="40" alt="閉じる"></a></p>
-</div>
-</div>
 </article>
 
 </div><!-- /#contents -->
