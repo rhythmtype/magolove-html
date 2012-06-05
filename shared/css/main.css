@@ -2,7 +2,7 @@
 /*
 *
 *	Title: magolove - main
-*	Last Modified: 2012-06-04
+*	Last Modified: 2012-06-05
 *	Description: WebApp Page Style
 *
 */
@@ -528,6 +528,7 @@ label {
 input[type="submit"] {
 	background: none;
 	border: none;
+	line-height: 1.4;
 }
 
 /* button style
@@ -553,8 +554,20 @@ input[type="submit"] {
 .btn-group-type-yn li:nth-child(2) {
 	padding-left: 9px;
 }
+.btn-group-type-yn a,
 .btn-group-type-yn input[type="submit"] {
 	font-weight: bold;
+	text-align: center;
+}
+.btn-group-type-yn li:nth-child(1) a {
+	background: #fff;
+	padding: 8px 0;
+	color: #666;
+}
+.btn-group-type-yn li:nth-child(2) a {
+	background: #ff7390;
+	padding: 8px 0;
+	color: #fff;
 }
 .btn-group-type-yn li:nth-child(1) input[type="submit"] {
 	background: #fff;
@@ -2037,13 +2050,12 @@ article .block-share .wrap-btn li:last-child {
 #login .btn-login {
 	margin-bottom: 18px;
 }
-#login .btn-login a {
-	display: block;
+#login .btn-login input[type="submit"] {
 	background: #ff7390;
+	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #ff7390));
 	padding: 8px 0;
 	color: #fff;
 	font-weight: bold;
-	text-align: center;
 }
 #login .btn-signup a {
 	display: block;
@@ -2199,12 +2211,11 @@ article .block-share .wrap-btn li:last-child {
 #register #signup-mail .btn-send {
 	margin: 0 68px;
 }
-#register #signup-mail .btn-send a {
+#register #signup-mail .btn-send input[type="submit"] {
 	background: #fff;
 	padding: 8px 0;
 	color: #666;
 	font-weight: bold;
-	text-align: center;
 }
 
 #register .txt-lead {
@@ -2240,14 +2251,27 @@ article .block-share .wrap-btn li:last-child {
 #register .block-select-photo .btn-upload-photo {
 	margin: 8px 0 0;
 	float: right;
+	position: relative;
 }
-#register .block-select-photo .btn-upload-photo a {
-	background: #fff url(../../register/images/icn_camera.png) scroll no-repeat 10px 7px;
-	-webkit-background-size: 22px 19px;
-	-moz-background-size: 22px 19px;
-	-o-background-size: 22px 19px;
-	-ms-background-size: 22px 19px;
-	background-size: 22px 19px;
+#register .block-select-photo .btn-upload-photo:before {
+	content: "";
+	display: block;
+	width: 22px;
+	height: 19px;
+	background: url(../../register/images/icn_camera.png) scroll no-repeat 0 0;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	-ms-background-size: cover;
+	background-size: cover;
+	position: absolute;
+	top: 7px;
+	left: 10px;
+	z-index: 30;
+}
+#register .block-select-photo .btn-upload-photo input[type="submit"] {
+	background: #fff;
+	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #fff));
 	padding: 8px 10px 8px 40px;
 	color: #333;
 	font-weight: bold;
@@ -2282,8 +2306,10 @@ article .block-share .wrap-btn li:last-child {
 	margin: 25px 68px 0;
 	clear: both;
 }
-#register .btn-signup a {
+#register .btn-signup a,
+#register .btn-signup input[type="submit"] {
 	background: #f6ab19;
+	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #f6ab19));
 	padding: 8px 0;
 	color: #fff;
 	font-weight: bold;
@@ -2378,13 +2404,13 @@ article .block-share .wrap-btn li:last-child {
 	margin: 0 0 15px;
 	padding: 10px 82px;
 }
-#album.webview .block-login .btn-login input {
+#album.webview .block-login .btn-login a {
 	background: #ff7390;
-	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #ff7390));
 	padding: 10px 0;
 	color: #fff;
 	font-weight: bold;
 	font-size: 122%;
+	text-align: center;
 }
 #album.webview #web-footer .social-btn {
 	margin: 0 0 15px;
@@ -2397,12 +2423,12 @@ article .block-share .wrap-btn li:last-child {
 #album.webview #web-footer .btn-send-mail {
 	margin: 0 82px 10px;
 }
-#album.webview #web-footer .btn-send-mail input {
+#album.webview #web-footer .btn-send-mail a {
 	background: #fff;
-	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #fff));
 	padding: 8px 0 8px 30px;
 	color: #666;
 	font-weight: bold;
+	text-align: center;
 }
 #album.webview #web-footer .btn-send-mail:before {
 	content: "";
